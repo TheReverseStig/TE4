@@ -32,6 +32,12 @@ class Connection
         return $statement->execute();
     }
 
+    public function tabortlista($id)
+    {   //tar bort inköpslistorna med det Id som ta bort knappen är kopplad till
+        $statement = $this->pdo->prepare("DELETE FROM listor WHERE id = :id");
+        $statement->bindValue('id', $id);
+        return $statement->execute();
+    }
 
     public function listemedid($id)
     {
