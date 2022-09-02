@@ -11,6 +11,6 @@ if ($id){
     $connection->skapalista($_POST);
 }
 
-header('Location: index.php');
+header('Location: index.php'); // redirect till main sida
 
 ?>

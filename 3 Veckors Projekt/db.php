@@ -12,18 +12,18 @@ class Connection
         } catch (PDOException $exception) {
             echo "ERROR: " . $exception->getMessage();
         }
-
-    }
+        // Kopierade denna del från en tutorial jag såg på hur man kopplade databasen med PDO
+    }   // för att jag inte visste hur PDO fungerade tidigare
 
     public function skaffalist()
-    {
+    {  // SQL för att ta inköpslistor från nyast datum först
         $statement = $this->pdo->prepare("SELECT * FROM listor ORDER BY datum DESC");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function skapalista($lista)
-    {
+    {   // skapara inköpslistorna genom att inserta informationen från hemsidan till databasen
         $statement = $this->pdo->prepare("INSERT INTO listor (titel, Inneholl, datum)
         VALUES (:titel, :Inneholl, :date)");
         $statement->bindValue('titel', $lista['titel']);
@@ -32,12 +32,6 @@ class Connection
         return $statement->execute();
     }
 
-    public function tabortlista($id)
-    {
-        $statement = $this->pdo->prepare("DELETE FROM listor WHERE id = :id");
-        $statement->bindValue('id', $id);
-        return $statement->execute();
-    }
 
     public function listemedid($id)
     {

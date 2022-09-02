@@ -1,5 +1,5 @@
 <?php
-$connection = require_once 'db.php';
+$connection = require_once 'db.php'; 
 
 $listor = $connection->skaffalist();
 
@@ -8,9 +8,9 @@ $aktivlista = [
     'titel' => '',
     'Inneholl' => ''
 ];
-if (isset($_GET['id'])) {
-    $aktivlista = $connection->listamedid($_GET['id']);
-}
+//if (isset($_GET['id'])) {
+  //  $aktivlista = $connection->listamedid($_GET['id']);
+//}
 
 ?>
 
@@ -46,10 +46,10 @@ if (isset($_GET['id'])) {
                 <div class="Inneholl">
                     <?php echo $lista['Inneholl'] ?>
                 </div>
-                <small><?php echo date('d/m/Y H:i', strtotime($lista['datum'])) ?></small>
+                <small><?php echo date('d/m/Y H:i', strtotime($lista['datum'])) ?></small> <!--kopierad för att jag inte använt datum förut i php-->
                 <form action="tabort.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $lista['id'] ?>">
-                    <button class="close">X</button>
+                    <button class="bort">ta bort listan</button>
                 </form>
             </div>
         <?php endforeach; ?>
