@@ -3,9 +3,9 @@
 
 $connection = require_once 'db.php';
 
-$connection->tabortlista($_POST['id']); //tar bort inköpslistor beroende på ID 
+$connection->tabortlista($_POST['id']); //tar bort inköpslista med X ID i POST
 
-header('Location: index.php'); // redirectar till index.php
+header('Location: index.php');
 
 ?>
 

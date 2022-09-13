@@ -4,13 +4,18 @@
 $connection = require_once 'db.php';
 
 
-$id = $_POST['id'] ?? '';
+$id = $_POST['id'];
+
+/** 
+ * if sats som kollar om den ska uppdatera eller skapa en helt ny lista beroende på om ID 
+ * redan är vald genom en href i index.php och tack vare biten ovanför
+*/
 if ($id){
-  //  $connection->updateralista($id, $_POST); //halva denna del gör ingenting just nu (för en framtida funktion)
-} else {                                     //där man ska kunna uppdatera en lista vid behov
+   $connection->uppdateralista($id, $_POST); 
+} else {                                     
     $connection->skapalista($_POST);
 }
 
-header('Location: index.php'); // redirect till main sida
+header('Location: index.php');
 
 ?>
