@@ -31,13 +31,13 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 <div>
-    <form class="new-lista" action="skapalista.php" method="post">
+    <form class="NyLista" action="skapalista.php" method="post">
         
         <!-- ger varje lista ett ID -->
         <input type="hidden" name="id" value="<?php echo $aktivlista['id'] ?>">
         
         <!-- Text rutorna som man ger listorna titel och innehåll -->
-        <input type="text" name="titel" placeholder="inköpningslistans namn" autocomplete="off"
+        <input type="text" name="titel" placeholder="inköpslistans namn" autocomplete="off"
         value="<?php echo $aktivlista['titel'] ?>">
         <textarea name="Inneholl" id="a"
         placeholder="Produkter att köpa in"><?php echo $aktivlista['Inneholl'] ?></textarea>
@@ -64,9 +64,9 @@ if (isset($_GET['id'])) {
                 den istället för att göra en ny lista
                 -->
                 <div class="titel">
-                <a href="?id=<?php echo $lista['id'] ?>">
+                <h2><a href="?id=<?php echo $lista['id'] ?>">
                 <?php echo $lista['titel'] ?>
-                </a>
+                </a></h2>
                 </div>
 
                 <div class="Inneholl">
@@ -79,7 +79,7 @@ if (isset($_GET['id'])) {
                 <!-- anrop till tabort.php för kanppen som är kopplad till listan -->
                 <form action="tabort.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $lista['id'] ?>">
-                    <button class="bort">ta bort listan</button>
+                    <button class="bort">X</button>
                 </form>
             </div>
         <?php endforeach; ?>
