@@ -13,10 +13,14 @@ $aktivlista = [
     'titel' => '',
     'Inneholl' => ''
 ];
+
+$titelErr = "";
+
 // kollar om det finns ett ID i url:en,
 if (isset($_GET['id'])) {
    $aktivlista = $connection->listamedid($_GET['id']);
 }
+
 
 ?>
 <!-- simpel HTML början -->
@@ -31,15 +35,17 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 <div>
+    
     <form class="NyLista" action="skapalista.php" method="post">
-        
+        <h1> Inköpslista </h1>
         <!-- ger varje lista ett ID -->
         <input type="hidden" name="id" value="<?php echo $aktivlista['id'] ?>">
         
         <!-- Text rutorna som man ger listorna titel och innehåll -->
-        <input type="text" name="titel" placeholder="inköpslistans namn" autocomplete="off"
+        <input type="text" name="titel" placeholder="inköpslistans namn" autocomplete="off" required
         value="<?php echo $aktivlista['titel'] ?>">
-        <textarea name="Inneholl" id="a"
+
+        <textarea name="Inneholl" id="a"  rows = "4"
         placeholder="Produkter att köpa in"><?php echo $aktivlista['Inneholl'] ?></textarea>
         
         <!--

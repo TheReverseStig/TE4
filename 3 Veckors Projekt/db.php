@@ -22,6 +22,7 @@ class Lista
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
     public function skapalista($lista)
     {   /** 
           * skapara inköpslistorna genom att inserta 

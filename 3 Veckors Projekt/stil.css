@@ -2,16 +2,84 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: url(kork.jpg);
+}
+
+.error {
+    color: #FF0000;
+}
+
+.NyLista{
+    background-color: #F6C915;
+    padding: 20px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.NyLista ::placeholder {
+    color: black;
+}
+
+.NyLista h1{
+    color: black;
+}
+
 .NyLista input{
-    font-family: Arial;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #05050500;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.NyLista input:focus{
+    outline: none;
 }
 
 .NyLista textarea{
-    font-family: Arial;
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: #05050500;
+  box-sizing: border-box;
+  resize: none;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.NyLista textarea:focus{
+    outline: none;
 }
 
+
 .NyLista button{
-    font-family: Arial;
+    display: block;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    margin-left: 27%;
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #a98a0f;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #3a3a3a ;
+}
+
+.NyLista button:hover{
+    background-color: #76620f;
+    color: #ffffff;
+}
+.NyLista button:active{
+    background-color: #564608;
+    box-shadow: 0 5px #050505;
+    transform: translateY(4px)
 }
 
 .titel{
@@ -28,7 +96,7 @@ a {
 }
 
 .lista{
-    background-color: gold;
+    background-color: #F6C915;
     color: black;
     min-width: 300px;
     display: inline-block;
@@ -40,23 +108,26 @@ a {
 
 .bort{
     position: absolute;
+    color: black;
     right: 10px;
     top: 10px;
     background-color: transparent;
     border: none;
     font-family: Arial;
     font-size: 30px;
+    cursor: pointer;
 }
 
 .Inneholl{
     position: relative;
+    font-family: cursive;
     bottom: 20px;
     white-space: pre-line; 
     line-height: 30px;
 }
 
  small{
-    font-family: Arial;
+    font-family: fantasy;
     position: absolute;
     bottom: 10px;
     right: 10px;
