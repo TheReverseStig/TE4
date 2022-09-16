@@ -6,9 +6,7 @@ body{
     background-image: url(kork.jpg);
 }
 
-.error {
-    color: #FF0000;
-}
+
 
 .NyLista{
     background-color: #F6C915;
@@ -41,13 +39,13 @@ body{
 
 .NyLista textarea{
     width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  background-color: #05050500;
-  box-sizing: border-box;
-  resize: none;
-  border: none;
-  border-bottom: 2px solid black;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #05050500;
+    box-sizing: border-box;
+    resize: none;
+    border: none;
+    border-bottom: 2px solid black;
 }
 .NyLista textarea:focus{
     outline: none;
@@ -88,7 +86,6 @@ body{
 
 a {
     color: black;
-    text-decoration: none;
 }
 
 .listor{
@@ -99,7 +96,11 @@ a {
     background-color: #F6C915;
     color: black;
     min-width: 300px;
+    /*
+     inline-block gör så att alla listorna hamnar i samma rad 
+    */
     display: inline-block;
+    
     margin: 10px;
     padding: 10px;
     position: relative;
@@ -132,6 +133,5 @@ a {
     bottom: 10px;
     right: 10px;
     margin-top: 10px;
-    display: block;
     text-align: right;
 }
